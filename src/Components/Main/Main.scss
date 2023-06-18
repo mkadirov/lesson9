@@ -1,0 +1,42 @@
+main {
+    
+    .user{
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+        
+        
+
+        .info-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            flex: 1;
+
+            .info-box-top {
+                display: flex;
+                justify-content: space-between;
+                
+                .right {
+                    color: rgba(0, 0, 0, 0.438);
+                }
+            }
+
+            .info-box-bottom {
+                display: flex;
+                
+                span {
+                    margin-left: 5px;
+                    font-size: 12px;
+                    
+                    
+                }
+            }
+        }
+    }
+}
+
+main.dark {
+    background-color: #090E11;
+    color: rgb(212, 208, 208);
+}

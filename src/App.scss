@@ -1,0 +1,34 @@
+.App {
+    background-color: rgb(143, 143, 135);
+    height: 100vh;
+}
+
+.main-box {
+    width: 25%;
+    min-height: 95vh;
+    background-color: white;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    .mainSection {
+        flex: 1;
+        overflow: hidden;
+    }
+   
+    
+
+    .top {
+
+        .top-bottom {
+            
+            text-align: center;
+            
+            
+            span {
+                font-size: 9px;
+            }
+        }
+    }
+}

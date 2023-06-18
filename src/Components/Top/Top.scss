@@ -1,0 +1,24 @@
+.top {
+    background-color: #056156;
+    color: white;
+
+    .night {
+        color: white !important;
+    }
+
+    .day {
+        display: none;
+    }
+    
+}
+
+.top.dark {
+    background-color: darken($color: grey, $amount: 40%);
+    .day {
+        color: white !important;
+        display: inline;
+    }
+    .night {
+        display: none;
+    }
+}
