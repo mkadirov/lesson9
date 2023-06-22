@@ -11,7 +11,7 @@ function Main() {
     const userList = useMemo(() => {
         return (
             users.map((user, index) => {
-                
+                console.log("render");
                 if(index !== 0) {
                     return   <div className="col col-12">
 

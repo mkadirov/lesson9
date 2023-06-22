@@ -26,6 +26,9 @@ function Header() {
     }, [])
   return (
     <header className={`d-flex justify-content-between py-2 px-2 ${theme}`}>
+        {
+            console.log("render")
+        }
         <span>{currentTime}</span>
         <div className='right'>
         <FontAwesomeIcon icon={faSignal} />

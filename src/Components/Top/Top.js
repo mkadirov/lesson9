@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useCallback} from 'react'
 import "./Top.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisV, faMoon, faSearch, faSun, faSunPlantWilt } from '@fortawesome/free-solid-svg-icons'
@@ -8,6 +8,10 @@ function Top() {
 
    const {users, theme, dispatch} = useContext(ThemeContext);
 
+   const changeMode = useCallback((mode) => {
+      dispatch({type: mode})
+   })
+
   return (
     <div className={`top ${theme}`}>
         <div className='top-top d-flex justify-content-between 
@@ -15,8 +19,8 @@ function Top() {
             <h4>WhatsApp</h4>
             <div className="top-top-right">
                 <FontAwesomeIcon icon={faSearch} className='me-3'/>
-                <FontAwesomeIcon icon={faMoon} className='btn night ' onClick={() => dispatch({type: 'dark'})}/>
-                <FontAwesomeIcon icon={faSun} className='btn day' onClick={() => dispatch({type: 'light'})}/>
+                <FontAwesomeIcon icon={faMoon} className='btn night ' onClick={() => changeMode('dark')}/>
+                <FontAwesomeIcon icon={faSun} className='btn day' onClick={() => changeMode('light')}/>
             </div>
         </div>
 

@@ -81,9 +81,7 @@ function App() {
 
   const[state, dispatch] = useReducer(reducer, initialState);
 
-  // function changeMode() {
-  //   setTheme(prev => (prev != "dark")? "dark" : "light")
-  // }
+ 
 
   return (
     <ThemeContext.Provider value={{users: users, theme: state.theme, dispatch: dispatch}} >
