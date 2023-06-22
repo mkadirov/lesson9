@@ -9,7 +9,7 @@ import ThemeContext from '../../Contexts/ThemeContext'
 
 
 function Header() {
-    const {users, theme, settheme} = useContext(ThemeContext);
+    const {users, theme, dispatch} = useContext(ThemeContext);
     const [currentTime, setCurrentTime]= useState("")
     
 

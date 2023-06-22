@@ -7,7 +7,7 @@ import Top from './Components/Top';
 import Main from './Components/Main';
 import Footer from './Components/Footer';
 import ThemeContext from './Contexts/ThemeContext';
-import React, {useState} from 'react'
+import React, {useState, useReducer} from 'react'
 
 import image1 from './Images/Ellipse 6.png'
 import image2 from './Images/Ellipse 7.png'
@@ -64,14 +64,29 @@ const users = [
 
 function App() {
 
-  const [theme, setTheme] = useState("light")
+  //const [theme, setTheme] = useState("light")
 
-  function changeMode() {
-    setTheme(prev => (prev != "dark")? "dark" : "light")
+  const initialState = {theme: 'light'}
+
+  const reducer = (state, action) => {
+    switch(action.type){
+      case 'light': 
+        return {...state, theme: 'light'}
+      case 'dark' : 
+        return {...state, theme: "dark"}
+      default:
+        return state
+    }
   }
 
+  const[state, dispatch] = useReducer(reducer, initialState);
+
+  // function changeMode() {
+  //   setTheme(prev => (prev != "dark")? "dark" : "light")
+  // }
+
   return (
-    <ThemeContext.Provider value={{users: users, theme: theme, changeMode: changeMode}} >
+    <ThemeContext.Provider value={{users: users, theme: state.theme, dispatch: dispatch}} >
       <div className="App d-flex justify-content-center align-items-center">
       <div className="main-box rounded ">
         <Header/>

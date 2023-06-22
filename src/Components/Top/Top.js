@@ -6,7 +6,8 @@ import ThemeContext from '../../Contexts/ThemeContext'
 
 function Top() {
 
-   const {users, theme, changeMode} = useContext(ThemeContext);
+   const {users, theme, dispatch} = useContext(ThemeContext);
+
   return (
     <div className={`top ${theme}`}>
         <div className='top-top d-flex justify-content-between 
@@ -14,8 +15,8 @@ function Top() {
             <h4>WhatsApp</h4>
             <div className="top-top-right">
                 <FontAwesomeIcon icon={faSearch} className='me-3'/>
-                <FontAwesomeIcon icon={faMoon} className='btn night ' onClick={changeMode}/>
-                <FontAwesomeIcon icon={faSun} className='btn day' onClick={changeMode}/>
+                <FontAwesomeIcon icon={faMoon} className='btn night ' onClick={() => dispatch({type: 'dark'})}/>
+                <FontAwesomeIcon icon={faSun} className='btn day' onClick={() => dispatch({type: 'light'})}/>
             </div>
         </div>
 

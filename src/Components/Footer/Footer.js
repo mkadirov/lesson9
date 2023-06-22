@@ -5,7 +5,7 @@ import { faContactCard, faMessage, faPhone } from '@fortawesome/free-solid-svg-i
 import ThemeContext from '../../Contexts/ThemeContext';
 
 function Footer() {
-  const { users, theme, changeMode } = useContext(ThemeContext);
+  const { users, theme, dispatch } = useContext(ThemeContext);
 
   return (
     <footer className={`foot ${theme}`}>
